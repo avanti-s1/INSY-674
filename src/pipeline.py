@@ -115,9 +115,11 @@ pipe = Pipeline(
         (
             "logistic_regression",
             LogisticRegression(
-                random_state=config.ml_config.random_state,
-                max_iter=config.ml_config.model_max_iter,
-                class_weight=config.ml_config.class_weight,
+            random_state=config.ml_config.random_state,
+            max_iter=config.ml_config.model_max_iter,
+            class_weight=config.ml_config.class_weight,
+            solver="lbfgs",
+            n_jobs=-1,
             ),
         ),
     ]
